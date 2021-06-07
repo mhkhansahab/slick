@@ -1,0 +1,15 @@
+.layout-container{
+    display: flex;
+}
+.left-layout, .right-layout{
+    height : 100vh;
+    position: relative;
+}
+.right-layout{
+    width: 80%;
+    background-color: #F5F8FC;
+}
+.left-layout{
+    width: 20%;
+    background-color: #ffffff;
+}
