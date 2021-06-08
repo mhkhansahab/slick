@@ -1,0 +1,8 @@
+.product-list{
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 25px;
+}
+.product-list > *:not(:last-child){
+    margin-right: 8px;
+}

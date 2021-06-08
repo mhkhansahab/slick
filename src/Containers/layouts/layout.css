@@ -6,10 +6,16 @@
     position: relative;
 }
 .right-layout{
+    padding: 40px;
     width: 80%;
     background-color: #F5F8FC;
 }
 .left-layout{
     width: 20%;
     background-color: #ffffff;
+}
+@media screen and (max-width: 768px) {
+    .right-layout{
+        padding: 10px;
+    }
 }

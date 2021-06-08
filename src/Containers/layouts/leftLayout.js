@@ -2,6 +2,7 @@ import React from 'react'
 import "./layout.css";
 import Logo from "./../../Components/atoms/logo/logo";
 import Navbar from "./../../Components/molecules/navbar/navbar";
+import "./../../Styles/media-queries/layout.css";
 
 function leftLayout() {
     return (
