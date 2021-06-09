@@ -1,0 +1,36 @@
+table{
+    width: 100%;
+}
+table, tr, th ,td{
+    border-collapse: collapse;
+    text-align: center;
+}
+th{
+    font-family: Poppins-SemiBold;
+    color: #6F8AE8;
+    padding: 5px 0;
+}
+.head{
+    background-color: #F5F6FA;
+    border-radius: 20px;
+}
+
+.tile-img{
+    width: 70px;
+}
+td{
+    margin: 20px 0;
+    border-radius: 20px;
+    font-family: Poppins-Regular;
+    font-size: 14px;
+    color: #8A8FA1;
+}
+.category{
+    margin-left: 40px;
+}
+.tile-product-name{
+    font-family: Poppins-SemiBold;
+}
+.tile-product-price{
+    margin-left: 10px;
+}

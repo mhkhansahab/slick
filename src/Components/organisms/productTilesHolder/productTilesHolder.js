@@ -1,11 +1,11 @@
 import React from 'react';
 import "./productTilesHolder.css";
-
+import ProductTile from "./../../atoms/productTile/productTile";
 
 function productTilesHolder() {
     return (
-        <div className="productTilesHolder">
-            
+        <div>
+            <ProductTile></ProductTile>
         </div>
     );
 }

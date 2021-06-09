@@ -1,0 +1,20 @@
+.banner-tile{
+    margin: 17px 5px;
+    justify-content: space-around;
+}
+.banner-image>img{
+    width: 120px;
+}
+.attachment-container{
+    background-color: #F5F6FA;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+.attachment-btn{
+    margin-right: 10px;
+}
+.attachment-text{
+    font-family: Poppins-Regular;
+    font-size: 14px;
+    color: #8A8FA1;
+}
