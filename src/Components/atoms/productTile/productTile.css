@@ -1,3 +1,7 @@
+.product-tile{
+    max-height: 400px;
+    overflow-y: scroll;
+}
 table{
     width: 100%;
 }

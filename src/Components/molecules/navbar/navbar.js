@@ -13,7 +13,7 @@ function navbar() {
             <NavLink to="/" style={{textDecoration:"none"}}><Navigator text="Home" img={homeIcon}></Navigator></NavLink>
             <NavLink to="#" style={{textDecoration:"none"}}><Navigator text="Analytics" img={analyticsIcon}></Navigator></NavLink>
             <NavLink to="#" style={{textDecoration:"none"}}><Navigator text="Products" img={productsIcon}></Navigator></NavLink>
-            <NavLink to="/management" style={{textDecoration:"none"}}><Navigator text="Management" img={managementIcon}></Navigator></NavLink>
+            <NavLink to="/management/banner" style={{textDecoration:"none"}}><Navigator text="Management" img={managementIcon}></Navigator></NavLink>
         </div>
     );
 }

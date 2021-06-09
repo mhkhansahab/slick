@@ -5,7 +5,7 @@ import BannerTile from "./../../atoms/bannerTile/bannerTile";
 
 function bannerTilesHolder() {
     return (
-        <div>
+        <div className="banner-tiles">
             <BannerTile></BannerTile>
             <BannerTile></BannerTile>
             <BannerTile></BannerTile>

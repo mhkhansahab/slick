@@ -1,0 +1,22 @@
+.pro-card{
+    margin: 20px 15px;
+    margin-top: 100px;
+    padding: 20px;
+    border: 1px solid #6F8AE8;
+    border-radius: 20px;
+}
+.pro-text{
+    font-family: Poppins-Regular;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+.pro-btn{
+    margin: 0 auto;
+    margin-top: 10px;
+    font-family: Poppins-Regular;
+    color: #fff;
+    padding: 8px 40px;
+    border-radius: 5px;
+    background-color: #6F8AE8;
+    width: fit-content;
+}
