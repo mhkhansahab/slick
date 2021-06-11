@@ -20,7 +20,8 @@ th{
 }
 
 .tile-img{
-    width: 70px;
+    width: 80px;
+    border-radius: 5px;
 }
 td{
     margin: 20px 0;

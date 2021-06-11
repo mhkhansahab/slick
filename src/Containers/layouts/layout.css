@@ -2,7 +2,6 @@
     display: flex;
 }
 .left-layout, .right-layout{
-    height : 100vh;
     position: relative;
 }
 .right-layout{

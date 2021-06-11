@@ -4,7 +4,7 @@ import BannerTilesHolder from "./../../organisms/bannerTilesHolder/bannerTilesHo
 import ProductTilesHolder from "./../../organisms/productTilesHolder/productTilesHolder";
 import { Switch, Route, NavLink } from "react-router-dom";
 
-function listManager() {
+function listManager(props) {
   return (
     <div className="banner-container">
       <div className="management-nav flex center-2">
@@ -20,15 +20,15 @@ function listManager() {
             <div className="management-links-border"></div>
           </div>
         </NavLink>
-        <div className="add-new-btn">+ Add New</div>
+        <div className="add-new-btn" onClick={()=>props.modalController('add','')}>+ Add New</div>
       </div>
 
       <Switch>
         <Route path="/management/banner">
-          <BannerTilesHolder></BannerTilesHolder>
+          <BannerTilesHolder modalController = {props.modalController}></BannerTilesHolder>
         </Route>
         <Route path="/management/product">
-          <ProductTilesHolder></ProductTilesHolder>
+          <ProductTilesHolder modalController = {props.modalController}></ProductTilesHolder>
         </Route>
       </Switch>
     </div>

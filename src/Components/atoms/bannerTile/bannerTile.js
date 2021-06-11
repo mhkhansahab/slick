@@ -1,24 +1,25 @@
 import React from "react";
 import "./bannerTile.css";
 import attachmentButton from "./../../../Assets/tile-icons/attachment.svg";
-import bannerImage from "./../../../Assets/banner-images/1.png";
 import TileButtons from "./../tileButtons/tileButtons";
 
-function bannerTile() {
+function bannerTile(props) {
   return (
     <div className="banner-tile flex center-2">
       <span className="banner-image">
-        <img src={bannerImage} alt=""></img>
+        <img src={props.image} alt=""></img>
       </span>
       <span className="attachment-container flex center-2">
         <span className="attachment-btn">
           <img src={attachmentButton} alt=""></img>
         </span>
         <span className="attachment-text">
-          https://images.pexels.com/photos/6231/marketing-color-colors-wheel.jpg?auto=compress&cs…
+          {props.link}
         </span>
       </span>
-      <TileButtons></TileButtons>      
+      <TileButtons 
+      deleteFunc = {props.deleteFunc} 
+      editFunc={props.modalController("edit",props.id)}></TileButtons>
     </div>
   );
 }

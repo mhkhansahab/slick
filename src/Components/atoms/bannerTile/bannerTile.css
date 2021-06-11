@@ -2,13 +2,18 @@
     margin: 17px 5px;
     justify-content: space-around;
 }
+.banner-image{
+    width: 120px;
+}
 .banner-image>img{
     width: 120px;
+    border-radius: 5px;
 }
 .attachment-container{
     background-color: #F5F6FA;
     border-radius: 5px;
     padding: 10px 20px;
+    width: 700px;
 }
 .attachment-btn{
     margin-right: 10px;
@@ -17,4 +22,8 @@
     font-family: Poppins-Regular;
     font-size: 14px;
     color: #8A8FA1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 600px;
 }

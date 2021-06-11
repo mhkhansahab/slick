@@ -5,11 +5,11 @@ import coin from "./../../../Assets/general/coin.svg";
 function card(props) {
     return (
         <div className="card">
-            <div className="card-image">
+            <div className="card-image flex center-1 center-2">
                 <img src={props.image} alt=""></img>
                 <div className="price-div flex center-2">
                     <img src={coin} alt="coin"></img>
-                    <span>4300</span>
+                    <span>{props.price}</span>
                 </div>
             </div>
             <div className="card-detail">
