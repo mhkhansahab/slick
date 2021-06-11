@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/slick/static/css/main.6a60b514.chunk.css",
+    "main.js": "/slick/static/js/main.bdefbe25.chunk.js",
+    "main.js.map": "/slick/static/js/main.bdefbe25.chunk.js.map",
+    "runtime-main.js": "/slick/static/js/runtime-main.ce6aac51.js",
+    "runtime-main.js.map": "/slick/static/js/runtime-main.ce6aac51.js.map",
+    "static/js/2.4d561367.chunk.js": "/slick/static/js/2.4d561367.chunk.js",
+    "static/js/2.4d561367.chunk.js.map": "/slick/static/js/2.4d561367.chunk.js.map",
+    "static/js/3.5e6e9053.chunk.js": "/slick/static/js/3.5e6e9053.chunk.js",
+    "static/js/3.5e6e9053.chunk.js.map": "/slick/static/js/3.5e6e9053.chunk.js.map",
+    "index.html": "/slick/index.html",
+    "static/css/main.6a60b514.chunk.css.map": "/slick/static/css/main.6a60b514.chunk.css.map",
+    "static/js/2.4d561367.chunk.js.LICENSE.txt": "/slick/static/js/2.4d561367.chunk.js.LICENSE.txt",
+    "static/media/fonts.css": "/slick/static/media/Poppins-SemiBold.cce5625b.ttf",
+    "static/media/analytics.d8f1c340.svg": "/slick/static/media/analytics.d8f1c340.svg",
+    "static/media/attachment.948f6a96.svg": "/slick/static/media/attachment.948f6a96.svg",
+    "static/media/close.783cdb6e.svg": "/slick/static/media/close.783cdb6e.svg",
+    "static/media/coin.9ae88ecb.svg": "/slick/static/media/coin.9ae88ecb.svg",
+    "static/media/cover.png": "/slick/static/media/cover.c9e18979.png",
+    "static/media/delete.d54a3424.svg": "/slick/static/media/delete.d54a3424.svg",
+    "static/media/edit.e1b8ce69.svg": "/slick/static/media/edit.e1b8ce69.svg",
+    "static/media/home.7acce9f5.svg": "/slick/static/media/home.7acce9f5.svg",
+    "static/media/management.59ccfee1.svg": "/slick/static/media/management.59ccfee1.svg",
+    "static/media/notification.f0441b90.svg": "/slick/static/media/notification.f0441b90.svg",
+    "static/media/polygon1.733a24a7.svg": "/slick/static/media/polygon1.733a24a7.svg",
+    "static/media/polygon2.2088b58d.svg": "/slick/static/media/polygon2.2088b58d.svg",
+    "static/media/products.66cc802d.svg": "/slick/static/media/products.66cc802d.svg",
+    "static/media/slick-logo.be62f390.svg": "/slick/static/media/slick-logo.be62f390.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ce6aac51.js",
+    "static/js/2.4d561367.chunk.js",
+    "static/css/main.6a60b514.chunk.css",
+    "static/js/main.bdefbe25.chunk.js"
+  ]
+}
