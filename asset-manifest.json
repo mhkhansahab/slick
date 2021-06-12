@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/slick/static/css/main.6a60b514.chunk.css",
-    "main.js": "/slick/static/js/main.bdefbe25.chunk.js",
-    "main.js.map": "/slick/static/js/main.bdefbe25.chunk.js.map",
-    "runtime-main.js": "/slick/static/js/runtime-main.ce6aac51.js",
-    "runtime-main.js.map": "/slick/static/js/runtime-main.ce6aac51.js.map",
-    "static/js/2.4d561367.chunk.js": "/slick/static/js/2.4d561367.chunk.js",
-    "static/js/2.4d561367.chunk.js.map": "/slick/static/js/2.4d561367.chunk.js.map",
-    "static/js/3.5e6e9053.chunk.js": "/slick/static/js/3.5e6e9053.chunk.js",
-    "static/js/3.5e6e9053.chunk.js.map": "/slick/static/js/3.5e6e9053.chunk.js.map",
+    "main.css": "/slick/static/css/main.6f7eb453.chunk.css",
+    "main.js": "/slick/static/js/main.857b674a.chunk.js",
+    "main.js.map": "/slick/static/js/main.857b674a.chunk.js.map",
+    "runtime-main.js": "/slick/static/js/runtime-main.a680f245.js",
+    "runtime-main.js.map": "/slick/static/js/runtime-main.a680f245.js.map",
+    "static/js/2.bb9e1e69.chunk.js": "/slick/static/js/2.bb9e1e69.chunk.js",
+    "static/js/2.bb9e1e69.chunk.js.map": "/slick/static/js/2.bb9e1e69.chunk.js.map",
+    "static/js/3.41261804.chunk.js": "/slick/static/js/3.41261804.chunk.js",
+    "static/js/3.41261804.chunk.js.map": "/slick/static/js/3.41261804.chunk.js.map",
     "index.html": "/slick/index.html",
-    "static/css/main.6a60b514.chunk.css.map": "/slick/static/css/main.6a60b514.chunk.css.map",
-    "static/js/2.4d561367.chunk.js.LICENSE.txt": "/slick/static/js/2.4d561367.chunk.js.LICENSE.txt",
+    "static/css/main.6f7eb453.chunk.css.map": "/slick/static/css/main.6f7eb453.chunk.css.map",
+    "static/js/2.bb9e1e69.chunk.js.LICENSE.txt": "/slick/static/js/2.bb9e1e69.chunk.js.LICENSE.txt",
     "static/media/fonts.css": "/slick/static/media/Poppins-SemiBold.cce5625b.ttf",
     "static/media/analytics.d8f1c340.svg": "/slick/static/media/analytics.d8f1c340.svg",
     "static/media/attachment.948f6a96.svg": "/slick/static/media/attachment.948f6a96.svg",
@@ -29,9 +29,9 @@
     "static/media/slick-logo.be62f390.svg": "/slick/static/media/slick-logo.be62f390.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.ce6aac51.js",
-    "static/js/2.4d561367.chunk.js",
-    "static/css/main.6a60b514.chunk.css",
-    "static/js/main.bdefbe25.chunk.js"
+    "static/js/runtime-main.a680f245.js",
+    "static/js/2.bb9e1e69.chunk.js",
+    "static/css/main.6f7eb453.chunk.css",
+    "static/js/main.857b674a.chunk.js"
   ]
 }
