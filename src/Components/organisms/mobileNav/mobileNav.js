@@ -11,10 +11,10 @@ import { ReactComponent as ManagementIcon} from "./../../../Assets/nav-icons/man
 function mobileNav() {
     return (
         <div className="mobile-nav">
-            <NavLink to="/"><HomeIcon></HomeIcon></NavLink>
+            <NavLink to="/slick/"><HomeIcon></HomeIcon></NavLink>
             <NavLink to="#"><AnalyticsIcon></AnalyticsIcon></NavLink>
             <NavLink to="#"><ProductsIcon></ProductsIcon></NavLink>
-            <NavLink to="/management/banner"><ManagementIcon></ManagementIcon></NavLink>
+            <NavLink to="/slick/management/banner"><ManagementIcon></ManagementIcon></NavLink>
 
         </div>
     )

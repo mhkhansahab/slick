@@ -10,10 +10,10 @@ import {NavLink} from "react-router-dom";
 function navbar() {
     return (
         <div className="navbar">
-            <NavLink to="/" style={{textDecoration:"none"}}><Navigator text="Home" img={homeIcon}></Navigator></NavLink>
+            <NavLink to="/slick/" style={{textDecoration:"none"}}><Navigator text="Home" img={homeIcon}></Navigator></NavLink>
             <NavLink to="#" style={{textDecoration:"none"}}><Navigator text="Analytics" img={analyticsIcon}></Navigator></NavLink>
             <NavLink to="#" style={{textDecoration:"none"}}><Navigator text="Products" img={productsIcon}></Navigator></NavLink>
-            <NavLink to="/management/banner" style={{textDecoration:"none"}}><Navigator text="Management" img={managementIcon}></Navigator></NavLink>
+            <NavLink to="/slick/management/banner" style={{textDecoration:"none"}}><Navigator text="Management" img={managementIcon}></Navigator></NavLink>
         </div>
     );
 }
