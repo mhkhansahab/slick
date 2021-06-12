@@ -11,6 +11,10 @@ export const DELETE_PRODUCT = "DELETE_PRODUCT";
 export const UPDATE_PRODUCT = "UPDATE_PRODUCT";
 
 export const MODAL_DATA_EDITOR = "MODAL_DATA_EDITOR";
+export const MODAL_DATA_CLEANER = "MODAL_DATA_CLEANER";
+
+export const EDIT_STATUS_CHANGER = "EDIT_STATUS_CHANGER";
+
 
 export const getProducts = () => async (dispatch) => {
   try {
@@ -48,7 +52,7 @@ export const createProduct = (data) => async (dispatch) => {
     });
     
   } catch (error) {
-    console.log(error);
+    throw(error);
   }
 };
 
@@ -72,10 +76,40 @@ export const deleteProduct = (id) => async (dispatch,getState) => {
       payload : filtered
     })
   } catch (error) {
-    console.log(error);
+    throw(error);
   }
 }
 
+export const updateProduct = (data , id) => async (dispatch,getState) => {
+
+  try {
+    const fetchData = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "PUT",
+      body : JSON.stringify(data)
+    };
+    const promise = await fetch("https://internship-slick-api.herokuapp.comapi/products/" + id, fetchData);
+    const product = await promise.json();
+   
+    const products = getState().products;
+    const filtered = products.map((item)=>{
+      if(product.data._id === item._id){
+          return product;
+      }
+      return item;
+  })
+    
+  dispatch({
+      type : UPDATE_PRODUCT,
+      payload : filtered
+    })
+
+  } catch (error) {
+    throw(error);
+  }
+}
 
 export const getBanners = () => async (dispatch) => {
   try {
@@ -88,7 +122,7 @@ export const getBanners = () => async (dispatch) => {
       payload: banners.data,
     });
   } catch (error) {
-    console.log(error);
+    throw(error)
   }
 };
 
@@ -103,7 +137,7 @@ export const getCategories = () => async (dispatch) => {
       payload: categories.data,
     });
   } catch (error) {
-    console.log(error);
+    throw(error)
   }
 };
 
@@ -126,7 +160,7 @@ export const createBanner = (data) => async (dispatch) => {
       payload: banner.data,
     });
   } catch (error) {
-    console.log(error);
+    throw(error);
   }
 };
 
@@ -150,27 +184,36 @@ export const deleteBanner = (id) => async (dispatch, getState) => {
       payload : filtered
     })
   } catch (error) {
-    console.log(error);
+    throw(error);
   }
 };
 
-export const updateBanner = (data) => async (dispatch) => {
+export const updateBanner = (data, id) => async (dispatch, getState) => {
   try {
     const fetchData = {
       headers: {
         "Content-Type": "application/json",
       },
-      method: "POST",
+      method: "PUT",
       body: JSON.stringify(data),
     };
-    // const promise = await fetch("https://internship-slick-api.herokuapp.com/api/banners", fetchData);
-    // const banner = await promise.json();
-    // dispatch({
-    //   type : ADD_BANNER,
-    //   payload : banner.data
-    // })
+    const promise = await fetch("https://internship-slick-api.herokuapp.com/api/banners/" + id, fetchData);
+    const banner = await promise.json();
+
+    const banners = getState().banners;
+    const filtered = banners.map((item)=>{
+       if(banner.data._id === item._id){
+         return banner.data;
+       }
+       return item;
+    })
+
+    dispatch({
+      type : UPDATE_BANNER,
+      payload : filtered
+    })
   } catch (error) {
-    console.log(error);
+    throw(error);
   }
 };
 
@@ -181,9 +224,37 @@ export const setProductModal = (id) => (dispatch, getState) => {
     const filtered = products.filter((item)=>{
       return item._id === id
     })
-  
+   
   dispatch({
       type: MODAL_DATA_EDITOR,
       payload: filtered,
     })
 };
+
+export const setBannerModal = (id) => (dispatch, getState) => {
+  const banners = getState().banners;
+  
+  const filtered = banners.filter((item)=>{
+    return item._id === id
+  })
+ 
+dispatch({
+    type: MODAL_DATA_EDITOR,
+    payload: filtered,
+  })
+};
+
+export const modalCleaner = () => (dispatch) => {
+  dispatch({
+    type : MODAL_DATA_CLEANER,
+    payload : []
+  })
+}
+
+export const editStatusChanger = (status) => (dispatch, getState) => {
+  
+  dispatch({
+    type : EDIT_STATUS_CHANGER,
+    payload : status
+  })
+} 

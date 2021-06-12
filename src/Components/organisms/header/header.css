@@ -6,6 +6,24 @@
     font-family: Poppins-SemiBold;
     font-size: 32px;
 }
-.header{
+.header,.mobile-top-header{
     justify-content: space-between;
+}
+.mobile-header{
+  display: none;
+}
+.mobile-top-header{
+  position: relative;
+}
+
+@media screen and (max-width : 1028px) {
+  .mobile-header{
+    display: block;
+  }
+}
+
+@media screen and (max-width : 768px) {
+  .mobile-top-header{
+    margin-bottom: 20px;
+  }
 }

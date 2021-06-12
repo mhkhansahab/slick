@@ -82,3 +82,8 @@
     font-family: Poppins-Regular;
     border-radius: 5px;
 }
+@media screen  and (max-width : 628px){
+    .fields-container{
+        width: 80%;
+    }
+}

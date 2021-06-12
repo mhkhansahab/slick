@@ -1,5 +1,6 @@
 .layout-container{
     display: flex;
+    max-width: 1366px;
 }
 .left-layout, .right-layout{
     position: relative;
@@ -10,8 +11,16 @@
     background-color: #F5F8FC;
 }
 .left-layout{
+    min-width: 250px;
     width: 20%;
     background-color: #ffffff;
+}
+
+
+@media screen and (max-width: 1028px){
+    .layout-container{
+        margin-bottom: 50px;
+    }
 }
 @media screen and (max-width: 768px) {
     .right-layout{

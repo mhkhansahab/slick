@@ -19,7 +19,7 @@ function bannerTile(props) {
       </span>
       <TileButtons 
       deleteFunc = {props.deleteFunc} 
-      editFunc={props.modalController("edit",props.id)}></TileButtons>
+      editFunc={()=>props.modalController("edit",props.id,"banner")}></TileButtons>
     </div>
   );
 }

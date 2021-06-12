@@ -2,10 +2,10 @@ import React from "react";
 import "./modal.css";
 import close from "./../../../Assets/general/close.svg";
 import coin from "./../../../Assets/general/coin.svg";
-import { useState } from "react";
+import { useState ,useEffect } from "react";
 import { useSelector , connect} from "react-redux";
-import {createBanner, createProduct} from "./../../../Store/action/actions";
-
+import {createBanner, createProduct, modalCleaner, updateBanner, updateProduct ,editStatusChanger} from "./../../../Store/action/actions";
+import Swal from 'sweetalert2';
 
 function Modal(props) {
   const [banner, setbanner] = useState({ link: "" });
@@ -17,7 +17,25 @@ function Modal(props) {
   });
 
   const categories = useSelector((state) => state.categories);
+  const {isEdit , data} = useSelector((state)=> state.modal);
 
+  useEffect(()=>{
+    if(data.length !== 0){
+      const element = data[0];
+    if(props.isBanner){
+      setbanner({link : element.link});
+    }else{
+      setproduct({
+        image : element.image,
+        category : element.category.name,
+        name : element.name,
+        price : element.price
+      })
+    }
+}
+  },[])
+
+  
   const bannerHandler = (e) => {
     const input = { ...banner };
     input.link = e.target.value;
@@ -27,13 +45,48 @@ function Modal(props) {
   const addBanner = () => {
     const input = {...banner}
     if(input.link !== ""){
-        props.createBanner(input);
-        setbanner({link : ""});
-        props.modalController("add");
+        
+        try{
+          props.createBanner(input);
+          setbanner({link : ""});
+          props.modalController("add");
+          props.modalCleaner();
+        }catch{
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+          })
+        }
     }else{
-      alert("No URL ADDED")
+      Swal.fire('No URL Added');
     }
   };
+
+  const editBanner = () => {
+    const input = {...banner}
+    if(input.link !== ""){
+      try{  
+      props.updateBanner(input, data[0]._id);
+        setbanner({link : ""});
+        props.modalController("add");
+        props.modalCleaner();
+        props.editStatusChanger(false);
+      }catch{
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong!',
+        })
+        
+      }
+    }else{
+      Swal.fire('No URL Added');
+    }
+  };
+
+
+
 
   const productHandler =(e, type)=>{
     
@@ -63,20 +116,56 @@ function Modal(props) {
   const addProduct = ()=>{
     const input = {...product}
     if(input.name !== "" && input.link !== "" && input.price !== "" && input.category !== ""){
-        props.createProduct(input);
+      try{  
+      props.createProduct(input);
         setproduct({
           image : "",
           name:"",
           price:"",
           category:""});
         props.modalController("add");
+        props.modalCleaner();
+      }catch{
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong!',
+        })
+
+      }
     }
     else{
-      alert("Enter Fields")
+      Swal.fire('Enter All Fields');
     }
   }
 
+  const editProduct = ()=>{
+    const input = {...product}
+    if(input.name !== "" && input.link !== "" && input.price !== "" && input.category !== ""){
+      try{  
+      props.updateProduct(input, data[0]._id);
+        setproduct({
+          image : "",
+          name:"",
+          price:"",
+          category:""});
+        props.modalController("add");
+        props.modalCleaner();
+        props.editStatusChanger(false);
+      }
+      catch{
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong!',
+        })
 
+      }
+    }
+    else{
+      Swal.fire('Enter All Fields');
+    }
+  }
 
   const bannerModal = () => {
     return (
@@ -85,7 +174,10 @@ function Modal(props) {
           <div className="modal-text">Add New Banner</div>
           <div
             className="close-btn flex center-1 center-2"
-            onClick={()=>props.modalController("add","")}
+            onClick={()=>{
+              props.modalController("add","");
+              props.editStatusChanger(false);
+            }}
           >
             <img src={close}></img>
           </div>
@@ -112,7 +204,10 @@ function Modal(props) {
           <div className="modal-text">Add New Product</div>
           <div
             className="close-btn flex center-1 center-2"
-            onClick={()=>props.modalController("add","")}
+            onClick={()=>{
+              props.modalController("add","");
+              props.editStatusChanger(false);
+            }}
           >
             <img src={close}></img>
           </div>
@@ -159,11 +254,11 @@ function Modal(props) {
       <div className="fields-container">
         {props.isBanner ? bannerModal() : productModal()}
         {props.isBanner ? (
-          <div className="save-btn" onClick={addBanner}>
+          <div className="save-btn" onClick={isEdit ? editBanner : addBanner}>
             Save
           </div>
         ) : (
-          <div className="save-btn" onClick={addProduct}>
+          <div className="save-btn" onClick={isEdit ? editProduct : addProduct}>
             Save
           </div>
         )}
@@ -174,7 +269,11 @@ function Modal(props) {
 
 const mapDispatchToProps = {
   createBanner,
-  createProduct
+  createProduct,
+  modalCleaner,
+  updateBanner,
+  updateProduct,
+  editStatusChanger
 }
 
 export default connect(null,mapDispatchToProps)(Modal);

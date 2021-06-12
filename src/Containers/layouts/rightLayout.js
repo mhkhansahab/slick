@@ -8,10 +8,10 @@ function rightLayout() {
   return (
       <div className="right-layout">
         <Switch>
-          <Route path="/management">
+          <Route path="/slick/management">
             <Management></Management>
           </Route>
-          <Route path="/">
+          <Route path="/slick/">
             <Home></Home>
           </Route>
         </Switch>

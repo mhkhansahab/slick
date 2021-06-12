@@ -1,4 +1,4 @@
-import { ADD_BANNER, DELETE_BANNER, GET_ALL_BANNERS } from "./../action/actions";
+import { ADD_BANNER, DELETE_BANNER, GET_ALL_BANNERS, UPDATE_BANNER } from "./../action/actions";
 
 const initialState = [];
 
@@ -11,6 +11,8 @@ const reducer = (state = initialState , actions)=>{
             const banners = [...state, payload];
             return banners;
         case DELETE_BANNER:
+            return payload;
+        case UPDATE_BANNER:
             return payload;
         default:
     }

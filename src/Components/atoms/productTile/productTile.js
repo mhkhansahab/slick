@@ -40,7 +40,7 @@ const productsData = useSelector((state) => state.products);
               <td>
                 <TileButtons
                 deleteFunc={()=>productRemover(item._id)}
-                editFunc={props.modalController}
+                editFunc={()=>props.modalController("edit",item._id,"product")}
                 ></TileButtons>
               </td>
             </tr>

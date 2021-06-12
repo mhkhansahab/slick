@@ -5,26 +5,36 @@ import ListManager from "./../../Components/molecules/listManager/listManager";
 import Modal from "./../../Components/organisms/modal/modal";
 import {useState} from "react";
 import {withRouter} from "react-router-dom";
-import {useSelector , connect} from "react-redux";
-import {setProductModal} from "./../../Store/action/actions";
+import {connect} from "react-redux";
+import {setProductModal, setBannerModal, modalCleaner, editStatusChanger} from "./../../Store/action/actions";
 
 function Management(props) {
     const isBanner = props.location.pathname.includes("banner");
     const [showModal, setshowModal] = useState(false);
 
 
-    const modalController = (type, id)=>{
+    const modalController = (type, id, modal)=>{
         if(type === "add"){
             setshowModal(!showModal);
+            props.modalCleaner();
         }else{
-            props.setProductModal(id)            
+            if (modal === "product"){
+                props.setProductModal(id);
+                props.editStatusChanger(true);
+                setshowModal(!showModal);
+            }else{
+                props.setBannerModal(id);
+                props.editStatusChanger(true);
+                setshowModal(!showModal);
+            }
+                        
         }
     }
 
     return (
         <div className="management">
             <Header upperText="" lowerText="Management"></Header>
-            <ListManager modalController={modalController} modalController = {modalController}></ListManager>
+            <ListManager modalController = {modalController}  isBanner={isBanner}></ListManager>
             {
                 showModal ? <Modal modalController = {modalController} isBanner={isBanner}></Modal> : null
             }
@@ -33,7 +43,10 @@ function Management(props) {
 }
 
 const mapDispatchToProps = {
-    setProductModal
+    setProductModal,
+    setBannerModal,
+    modalCleaner,
+    editStatusChanger
 }
 
 export default connect(null,mapDispatchToProps)(withRouter(Management));
